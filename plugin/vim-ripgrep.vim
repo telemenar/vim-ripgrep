@@ -28,7 +28,7 @@ fun! g:RgVisual() range
   call s:RgGrepContext(function('s:RgSearch'), '"' . s:RgGetVisualSelection() . '"')
 endfun
 
-fun! ripgrep#Rg(txt)
+fun! vim-ripgrep#Rg(txt)
   call s:RgGrepContext(function('s:RgSearch'), s:RgSearchTerm(a:txt))
 endfun
 
@@ -137,7 +137,7 @@ fun! s:RgHasFile(path)
   return filereadable(a:path) || isdirectory(a:path)
 endfun
 
-fun! ripgrep#RgShowRoot()
+fun! vim-ripgrep#RgShowRoot()
   if exists('g:rg_derive_root')
     echo s:RgRootDir()
   else
